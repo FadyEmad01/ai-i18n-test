@@ -3,8 +3,16 @@
 import {useTranslations} from 'next-intl';
 import Link from 'next/link';
 import {locales} from '@/i18n';
+import {setRequestLocale} from 'next-intl/server';
 
-export default function Home() {
+export default function Home({
+  params: {locale}
+}: {
+  params: {locale: string};
+}) {
+  // Enable static rendering
+  setRequestLocale(locale);
+  
   const t = useTranslations();
 
   return (
