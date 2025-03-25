@@ -1,7 +1,6 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
 import {locales} from '@/i18n';
-import {setRequestLocale} from 'next-intl/server';
 import '../globals.css';
 
 export function generateStaticParams() {
@@ -15,9 +14,6 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: {locale: string};
 }) {
-  // Enable static rendering
-  setRequestLocale(locale);
-
   let messages;
   try {
     messages = (await import(`@/messages/${locale}.json`)).default;

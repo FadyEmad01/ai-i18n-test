@@ -2,17 +2,9 @@
 
 import {useTranslations} from 'next-intl';
 import Link from 'next/link';
-import {locales} from '@/i18n';
-import {setRequestLocale} from 'next-intl/server';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
-export default function Home({
-  params: {locale}
-}: {
-  params: {locale: string};
-}) {
-  // Enable static rendering
-  setRequestLocale(locale);
-  
+export default function Home() {
   const t = useTranslations();
 
   return (
@@ -37,17 +29,7 @@ export default function Home({
                 </Link>
               </div>
             </div>
-            <div className="flex items-center space-x-4">
-              {locales.map((locale) => (
-                <Link
-                  key={locale}
-                  href={`/${locale}`}
-                  className="text-gray-900 hover:text-primary"
-                >
-                  {locale.toUpperCase()}
-                </Link>
-              ))}
-            </div>
+            <LanguageSwitcher />
           </div>
         </div>
       </nav>
