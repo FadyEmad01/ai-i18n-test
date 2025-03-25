@@ -1,0 +1,30 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Bienvenue sur Notre Plateforme",
+    "subtitle": "La meilleure solution pour vos besoins",
+    "cta": "Commencer"
+  },
+  "features": {
+    "title": "Nos Fonctionnalités",
+    "feature1": {
+      "title": "Intégration Facile",
+      "description": "Intégration transparente avec vos systèmes existants"
+    },
+    "feature2": {
+      "title": "Analyses Puissantes",
+      "description": "Obtenez des insights détaillés sur vos données"
+    },
+    "feature3": {
+      "title": "Plateforme Sécurisée",
+      "description": "Sécurité de niveau entreprise pour votre tranquillité d'esprit"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Votre Entreprise. Tous droits réservés."
+  }
+} 
