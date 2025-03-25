@@ -1,7 +1,7 @@
 "use client"
 
 import Link from 'next/link';
-import {locales} from '@/i18n';
+import {locales} from '@/i18n/config';
 
 export default function LanguageSwitcher() {
   return (

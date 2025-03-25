@@ -1,10 +1,11 @@
 import {NextIntlClientProvider} from 'next-intl';
 import {notFound} from 'next/navigation';
-import {locales} from '@/i18n';
+import {locales, type Locale} from '@/i18n/config';
+import {setRequestLocale} from 'next-intl/server';
 import '../globals.css';
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({locale}));
+  return locales.map((locale: Locale) => ({locale}));
 }
 
 export default async function LocaleLayout({
@@ -12,8 +13,11 @@ export default async function LocaleLayout({
   params: {locale}
 }: {
   children: React.ReactNode;
-  params: {locale: string};
+  params: {locale: Locale};
 }) {
+  // Enable static rendering
+  setRequestLocale(locale);
+
   let messages;
   try {
     messages = (await import(`@/messages/${locale}.json`)).default;
